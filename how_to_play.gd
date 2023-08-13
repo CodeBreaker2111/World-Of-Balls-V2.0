@@ -27,3 +27,8 @@ func _on_next_slide_button_pressed():
 	else:
 		$Sprite2D.hide()
 		$Description1.hide()
+
+
+func _on_back_button_pressed():
+	print("Loading main menu...")
+	get_tree().change_scene_to_file("res://UI1.tscn")

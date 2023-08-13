@@ -9,7 +9,7 @@ var lvl2unlock = LevelUnlock.level2
 
 func _process(delta) -> void:
 	var levelTime = $Level_Timer.time_left
-	$Label.text = String(lives)
+	$Label.text = str(lives)
 	$Level_Time.text = "%.1f" % levelTime
 	if lives < 1:
 		dead()

@@ -13,6 +13,8 @@ func _on_Level_1_pressed():
 	get_tree().change_scene_to_file("res://Level1.tscn")
 
 func _ready():
+	print("Main menu loaded.")
+	
 	if LevelUnlock.level2 == true:
 		$Level_2/Sprite2D.hide()
 		$Level_2.text =  "Level2"

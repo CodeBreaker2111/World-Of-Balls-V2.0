@@ -32,9 +32,19 @@ theme_override_font_sizes/font_size = 25
 text = "Click to go to next slide."
 
 [node name="Next_Slide_Button" type="TextureButton" parent="."]
-offset_left = -175.0
-offset_top = -119.0
-offset_right = 2165.0
-offset_bottom = 1140.0
+offset_left = -112.0
+offset_top = -67.0
+offset_right = 2228.0
+offset_bottom = 1192.0
+
+[node name="Back_Button" type="Button" parent="."]
+offset_left = 30.0
+offset_top = 27.0
+offset_right = 176.0
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("2_v2fnn")
+theme_override_font_sizes/font_size = 46
+text = "Back"
 
 [connection signal="pressed" from="Next_Slide_Button" to="." method="_on_next_slide_button_pressed"]
+[connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]

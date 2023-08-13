@@ -8,7 +8,7 @@ func _ready():
 	else:
 		$Fait.text = "You Won!"
 	var lives = LevelFait.lives
-	var livesString = String(lives)
+	var livesString = str(lives)
 	$Label.text = livesString
 
 
