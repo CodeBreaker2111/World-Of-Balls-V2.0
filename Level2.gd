@@ -31,29 +31,29 @@ func _process(delta) -> void:
 
 func _on_Spawn1_timeout():
 	if playing == true:
-		var thing = enimy.instance()
+		var thing = enimy.instantiate()
 		thing.position.x = rng.randi_range(0, 700)
 		add_child(thing)
 		$Spawn1.start(rng.randi_range(1, 4))
-		thing.connect("death", self, "_on_death")
+		thing.connect("death", Callable(self, "_on_death"))
 
 
 func _on_Spawn2_timeout():
 	if playing == true:
-		var thing = enimy.instance()
+		var thing = enimy.instantiate()
 		thing.position.x = rng.randi_range(0, 700)
 		add_child(thing)
 		$Spawn1.start(rng.randi_range(5, 10))
-		thing.connect("death", self, "_on_death")
+		thing.connect("death", Callable(self, "_on_death"))
 
 
 func _on_Spawn3_timeout():
 	if playing == true:
-		var thing = enimy.instance()
+		var thing = enimy.instantiate()
 		thing.position.x = rng.randi_range(0, 700)
 		add_child(thing)
 		$Spawn3.start(rng.randi_range(10, 15))
-		thing.connect("death", self, "_on_death")
+		thing.connect("death", Callable(self, "_on_death"))
 
 
 func _on_death():
@@ -74,7 +74,7 @@ func _times_up():
 			print("Congrats! You beat level1... again. huh. Well, no point in celebrating I guess. Gosh! It took me like an hour to set this party up.")
 		else:
 			print("Congrats! You beat level1! Now level2 is unlocked. Actually level3 is still under developement. But you will be able to play it sometime.")
-	get_tree().change_scene("res://Level_End.tscn")
+	get_tree().change_scene_to_file("res://Level_End.tscn")
 
 func dead():
 	playing = false
@@ -82,14 +82,14 @@ func dead():
 	LevelFait.lives = 0
 	LevelFait.won = false
 	$Pop.expload()
-	yield(get_tree().create_timer(1 * 2), "timeout")
-	get_tree().change_scene("res://Level_End.tscn")
+	await get_tree().create_timer(1 * 2).timeout
+	get_tree().change_scene_to_file("res://Level_End.tscn")
 
 
 func _on_Spawn4_timeout():
 	if playing == true:
-		var thing = SpikeBall.instance()
+		var thing = SpikeBall.instantiate()
 		thing.position.x = rng.randi_range(0, 700)
 		add_child(thing)
-		thing.connect("death", self, "_on_death")
+		thing.connect("death", Callable(self, "_on_death"))
 		$Spawn4.start(5)

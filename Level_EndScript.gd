@@ -13,4 +13,4 @@ func _ready():
 
 
 func _on_main_menue():
-	get_tree().change_scene_to(mainMenue)
+	get_tree().change_scene_to_packed(mainMenue)

@@ -18,4 +18,4 @@ func _HS3():
 
 
 func _on_back():
-	get_tree().change_scene("res://UI1.tscn")
+	get_tree().change_scene_to_file("res://UI1.tscn")

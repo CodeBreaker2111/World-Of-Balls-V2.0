@@ -3,21 +3,21 @@
 [ext_resource path="res://Pop.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Back Ground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Level2.gd" type="Script" id=3]
-[ext_resource path="res://DroidSerif-WmoY.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://DroidSerif-WmoY.ttf" type="FontFile" id=4]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="FontFile" id=1]
 size = 50
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="FontFile" id=2]
 size = 50
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="FontFile" id=3]
 size = 50
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="FontFile" id=4]
 size = 50
 font_data = ExtResource( 4 )
 
@@ -42,34 +42,34 @@ wait_time = 60.0
 one_shot = true
 
 [node name="Lives" type="RichTextLabel" parent="."]
-margin_left = 71.0
-margin_top = 104.0
-margin_right = 230.0
-margin_bottom = 165.0
-custom_fonts/normal_font = SubResource( 1 )
+offset_left = 71.0
+offset_top = 104.0
+offset_right = 230.0
+offset_bottom = 165.0
+theme_override_fonts/normal_font = SubResource( 1 )
 text = "Lives:"
 
 [node name="Label" type="Label" parent="."]
-margin_left = 231.0
-margin_top = 104.0
-margin_right = 428.0
-margin_bottom = 163.0
-custom_fonts/font = SubResource( 2 )
+offset_left = 231.0
+offset_top = 104.0
+offset_right = 428.0
+offset_bottom = 163.0
+theme_override_fonts/font = SubResource( 2 )
 
 [node name="Time_Left" type="RichTextLabel" parent="."]
-margin_left = 66.0
-margin_top = 164.0
-margin_right = 330.0
-margin_bottom = 228.0
-custom_fonts/normal_font = SubResource( 3 )
+offset_left = 66.0
+offset_top = 164.0
+offset_right = 330.0
+offset_bottom = 228.0
+theme_override_fonts/normal_font = SubResource( 3 )
 text = "Time Left:"
 
 [node name="Level_Time" type="Label" parent="."]
-margin_left = 331.0
-margin_top = 169.0
-margin_right = 471.0
-margin_bottom = 222.0
-custom_fonts/font = SubResource( 4 )
+offset_left = 331.0
+offset_top = 169.0
+offset_right = 471.0
+offset_bottom = 222.0
+theme_override_fonts/font = SubResource( 4 )
 
 [connection signal="timeout" from="Spawn1" to="." method="_on_Spawn1_timeout"]
 [connection signal="timeout" from="Spawn2" to="." method="_on_Spawn2_timeout"]

@@ -7,7 +7,7 @@ func _on_spawn1():
 	var i = 0
 	while(i < 6):
 		i += 1
-		var Enemy = enimy1.instance()
+		var Enemy = enimy1.instantiate()
 		Enemy.position.x = rng.randi_range(0, 700)
 		add_child(Enemy)
 
@@ -16,4 +16,4 @@ func _ready():
 	print("Secret Loaded.")
 
 func _on_Button_pressed():
-	get_tree().change_scene("res://UI1.tscn")
+	get_tree().change_scene_to_file("res://UI1.tscn")

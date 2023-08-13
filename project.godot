@@ -6,12 +6,13 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
+config_version=5
 
 [application]
 
 config/name="bubble_popping"
 run/main_scene="res://UI1.tscn"
+config/features=PackedStringArray("4.1")
 config/icon="res://icon.png"
 
 [autoload]
@@ -23,11 +24,12 @@ ImportData="*res://ImportData.gd"
 Inventory="*res://Inventory.gd"
 Load="*res://Load.gd"
 Enemy1Data="*res://enemy1_data.gd"
+Playerdata="*res://playerdata.gd"
 
 [display]
 
-window/size/width=1920
-window/size/height=1080
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [gui]
 
@@ -37,7 +39,7 @@ common/drop_mouse_on_gui_input_disabled=true
 
 f={
 "deadzone": 0.5,
-"events": [  ]
+"events": []
 }
 
 [physics]
@@ -46,4 +48,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_environment="res://default_env.tres"
+environment/defaults/default_environment="res://default_env.tres"

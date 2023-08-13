@@ -1,7 +1,7 @@
 extends Control
 
 func _on_button_back():
-	get_tree().change_scene("res://UI1.tscn")
+	get_tree().change_scene_to_file("res://UI1.tscn")
 
 
 func _on_BG_toggled(button_pressed):
@@ -17,5 +17,5 @@ func _ready():
 	if Settings.BG == false:
 		$Back_Ground.hide()
 	if Settings.BG == true:
-		$BG_Toggle.pressed = true
+		$BG_Toggle.button_pressed = true
 		$Back_Ground.show()

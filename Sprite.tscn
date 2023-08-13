@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://SpeedPotion.png" type="Texture" id=1]
+[ext_resource path="res://SpeedPotion.png" type="Texture2D" id=1]
 [ext_resource path="res://Sprite.gd" type="Script" id=2]
 
-[node name="Sprite" type="Sprite" groups=["item"]]
+[node name="Sprite2D" type="Sprite2D" groups=["item"]]
 z_index = 4
 texture = ExtResource( 1 )
 script = ExtResource( 2 )

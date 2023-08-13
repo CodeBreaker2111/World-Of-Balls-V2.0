@@ -17,11 +17,11 @@ func _process(delta) -> void:
 
 func _on_Spawn1():
 	if playing == true:
-		var thing = enimy1.instance()
+		var thing = enimy1.instantiate()
 		thing.position.x = rng.randi_range(0, 700)
 		add_child(thing)
 		$Spawn1.start(rng.randi_range(5, 9))
-		thing.connect("death", self, "_on_death")
+		thing.connect("death", Callable(self, "_on_death"))
 
 func _ready():
 		rng.randomize()
@@ -38,11 +38,11 @@ func _on_death():
 
 func _on_Spawn2_timeout():
 	if playing == true:
-		var thing = enimy1.instance()
+		var thing = enimy1.instantiate()
 		thing.position.x = rng.randi_range(0, 700)
 		add_child(thing)
 		$Spawn2.start(rng.randi_range(7, 10))
-		thing.connect("death", self, "_on_death")
+		thing.connect("death", Callable(self, "_on_death"))
 
 
 func _time_up():
@@ -50,7 +50,7 @@ func _time_up():
 	get_tree().call_group("enimy", "leave_pls")
 	LevelFait.won = true
 	LevelFait.lives = lives
-	get_tree().change_scene_to(end)
+	get_tree().change_scene_to_packed(end)
 	if lives > 1:
 		LevelUnlock.level2 = true
 		var num = rng.randi_range(0, 1)
@@ -69,5 +69,5 @@ func dead():
 	LevelFait.won = false
 	LevelFait.lives = 0
 	$Pop.expload()
-	yield(get_tree().create_timer(1 * 2), "timeout")
-	get_tree().change_scene_to(end)
+	await get_tree().create_timer(1 * 2).timeout
+	get_tree().change_scene_to_packed(end)

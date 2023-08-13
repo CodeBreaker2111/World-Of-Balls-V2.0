@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://pqrkhoyp14t"]
+
+[ext_resource type="Script" path="res://how_to_play.gd" id="1_q8i54"]
+[ext_resource type="Texture2D" uid="uid://s8uij0vaawog" path="res://pop_thing.png" id="1_qyylu"]
+[ext_resource type="FontFile" uid="uid://c880ppsw4aehw" path="res://DroidSerif-WmoY.ttf" id="2_v2fnn"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_q8i54")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(932, 356)
+texture = ExtResource("1_qyylu")
+
+[node name="Description1" type="Label" parent="."]
+offset_left = 202.0
+offset_top = 675.0
+offset_right = 1656.0
+offset_bottom = 869.0
+theme_override_fonts/font = ExtResource("2_v2fnn")
+theme_override_font_sizes/font_size = 80
+text = "This is the player. 
+Use left and right arrow keys to move."
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 759.0
+offset_top = 978.0
+offset_right = 939.0
+offset_bottom = 1001.0
+theme_override_fonts/font = ExtResource("2_v2fnn")
+theme_override_font_sizes/font_size = 25
+text = "Click to go to next slide."
+
+[node name="Next_Slide_Button" type="TextureButton" parent="."]
+offset_left = -175.0
+offset_top = -119.0
+offset_right = 2165.0
+offset_bottom = 1140.0
+
+[connection signal="pressed" from="Next_Slide_Button" to="." method="_on_next_slide_button_pressed"]

@@ -13,22 +13,25 @@ func _process(delta) -> void:
 		$Area2D.position += Vector2(-10, 0)
 	if Input.is_action_pressed("ui_right"):
 		$Area2D.position += Vector2(10, 0)
+	Playerdata.playerPosX = $Area2D.position.x
+	Playerdata.playerPosY = $Area2D.position.y
+	Playerdata.playerVect2 = Vector2($Area2D.position.x, $Area2D.position.y)
 
 func reset():
-	$Area2D/Sprite.texture = normal
-	$Area2D/Sprite.show()
+	$Area2D/Sprite2D.texture = normal
+	$Area2D/Sprite2D.show()
 
 func expload():
-	$Area2D/Sprite.texture = f1
-	yield(get_tree().create_timer(1 * 0.05), "timeout")
-	$Area2D/Sprite.texture = f2
-	yield(get_tree().create_timer(1 * 0.05), "timeout")
-	$Area2D/Sprite.texture = f3
-	yield(get_tree().create_timer(1 * 0.05), "timeout")
-	$Area2D/Sprite.texture = f4
-	yield(get_tree().create_timer(1 * 0.05), "timeout")
-	$Area2D/Sprite.texture = f5
-	yield(get_tree().create_timer(1 * 0.05), "timeout")
-	$Area2D/Sprite.texture = f6
-	yield(get_tree().create_timer(1 * 0.05), "timeout")
+	$Area2D/Sprite2D.texture = f1
+	await get_tree().create_timer(1 * 0.05).timeout
+	$Area2D/Sprite2D.texture = f2
+	await get_tree().create_timer(1 * 0.05).timeout
+	$Area2D/Sprite2D.texture = f3
+	await get_tree().create_timer(1 * 0.05).timeout
+	$Area2D/Sprite2D.texture = f4
+	await get_tree().create_timer(1 * 0.05).timeout
+	$Area2D/Sprite2D.texture = f5
+	await get_tree().create_timer(1 * 0.05).timeout
+	$Area2D/Sprite2D.texture = f6
+	await get_tree().create_timer(1 * 0.05).timeout
 	$Area2D.hide()

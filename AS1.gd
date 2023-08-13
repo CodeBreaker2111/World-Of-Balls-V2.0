@@ -7,14 +7,14 @@ const speedpotion = preload("res://Sprite.tscn")
 
 func _load_speed_potion():
 	print("ok it ran")
-	var SpeedPotion = speedpotion.instance()
+	var SpeedPotion = speedpotion.instantiate()
 	SpeedPotion.scale = Vector2(2.1, 2.1)
 	SpeedPotion.position = Vector2(570, 890)
 	add_child(speedpotion)
 	item = speedpotion
 
 func _hold():
-	Item = item.instance()
+	Item = item.instantiate()
 	Item.scale = Vector2(3, 3)
 	add_child(Item)
 
