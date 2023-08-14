@@ -1,13 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://pqrkhoyp14t"]
+[gd_scene load_steps=5 format=3 uid="uid://pqrkhoyp14t"]
 
 [ext_resource type="Script" path="res://how_to_play.gd" id="1_q8i54"]
 [ext_resource type="Texture2D" uid="uid://s8uij0vaawog" path="res://pop_thing.png" id="1_qyylu"]
 [ext_resource type="FontFile" uid="uid://c880ppsw4aehw" path="res://DroidSerif-WmoY.ttf" id="2_v2fnn"]
+[ext_resource type="Texture2D" uid="uid://b1qf7pvhk0wqk" path="res://enimy1.png" id="4_k1enm"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_q8i54")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Description2" type="Label" parent="."]
+offset_left = 198.0
+offset_top = 674.0
+offset_right = 1652.0
+offset_bottom = 868.0
+theme_override_fonts/font = ExtResource("2_v2fnn")
+theme_override_font_sizes/font_size = 80
+text = "This is the first enemy. You WANT to 
+hit it. If not, you lose a life."
+horizontal_alignment = 1
+
+[node name="Sprite1" type="Sprite2D" parent="."]
 position = Vector2(932, 356)
 texture = ExtResource("1_qyylu")
 
@@ -45,6 +57,10 @@ offset_bottom = 88.0
 theme_override_fonts/font = ExtResource("2_v2fnn")
 theme_override_font_sizes/font_size = 46
 text = "Back"
+
+[node name="Sprite2" type="Sprite2D" parent="."]
+position = Vector2(932, 356)
+texture = ExtResource("4_k1enm")
 
 [connection signal="pressed" from="Next_Slide_Button" to="." method="_on_next_slide_button_pressed"]
 [connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]
